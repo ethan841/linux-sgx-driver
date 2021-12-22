@@ -181,13 +181,13 @@ static int sgx_stats_open(struct inode *inode, struct file *file)
 	return single_open(file, sgx_stats_read, NULL);
 }
 
-//static struct file_operations sgx_stats_ops = {
-static struct proc_ops sgx_stats_ops = {
-	//.owner = THIS_MODULE,
-	.proc_open = sgx_stats_open,
-	.proc_read = seq_read,
-	.proc_lseek = seq_lseek,
-	.proc_release = single_release
+static struct file_operations sgx_stats_ops = {
+//static struct proc_ops sgx_stats_ops = {
+	.owner = THIS_MODULE,
+	.open = sgx_stats_open,
+	.read = seq_read,
+	.llseek = seq_lseek,
+	.release = single_release
 };
 
 static struct seq_operations sgx_encl_seq_ops = {
@@ -202,13 +202,13 @@ static int sgx_encl_open(struct inode *inode, struct file *file)
 	return seq_open(file, &sgx_encl_seq_ops);
 }
 
-//static struct file_operations sgx_encl_ops = {
-static struct proc_ops sgx_encl_ops = {
-	//.owner = THIS_MODULE,
-	.proc_open = sgx_encl_open,
-	.proc_read = seq_read,
-	.proc_lseek = seq_lseek,
-	.proc_release = seq_release
+static struct file_operations sgx_encl_ops = {
+//static struct proc_ops sgx_encl_ops = {
+	.owner = THIS_MODULE,
+	.open = sgx_encl_open,
+	.read = seq_read,
+	.llseek = seq_lseek,
+	.release = seq_release
 };
 #endif
 
