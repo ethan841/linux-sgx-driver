@@ -1,0 +1,2 @@
+/home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_main.o /home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_page_cache.o /home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_ioctl.o /home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_vma.o /home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_util.o /home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_encl.o /home/mobileosdcap1/SGX/sgx_ch/linux-sgx-driver/sgx_encl2.o
+
