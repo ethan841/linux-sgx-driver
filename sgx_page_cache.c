@@ -90,8 +90,17 @@ static unsigned long sgx_pages_alloced = 0;
 static struct task_struct *ksgxswapd_tsk;
 static DECLARE_WAIT_QUEUE_HEAD(ksgxswapd_waitq);
 
-static int sgx_test_and_clear_young_cb(pte_t *ptep, pgtable_t token,
-				       unsigned long addr, void *data)
+static int sgx_test_and_clear_young_cb(pte_t *ptep,
+		#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 3, 0))
+    #if( defined(RHEL_RELEASE_VERSION) && defined(RHEL_RELEASE_CODE))
+        #if (RHEL_RELEASE_CODE <= RHEL_RELEASE_VERSION(8, 1))
+                                       pgtable_t token,
+        #endif
+    #else
+                                       pgtable_t token,
+    #endif
+#endif
+		unsigned long addr, void *data)
 {
 	pte_t pte;
 	int ret;
