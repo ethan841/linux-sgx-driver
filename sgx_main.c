@@ -70,6 +70,7 @@
 #include <linux/hashtable.h>
 #include <linux/kthread.h>
 #include <linux/platform_device.h>
+#include <linux/proc_fs.h>
 
 #define DRV_DESCRIPTION "Intel SGX Driver"
 #define DRV_VERSION "0.10"
